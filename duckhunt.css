@@ -1,12 +1,10 @@
-.container{
+*{
 	background-image: url("images/stage.png");
-	width: 1503px;
-	height: 700px;
 }
 
 #duck{
-	padding-left: 600px;
-	padding-top: 100px;
+	position: absolute;
+	top: 250px;
 }
 
 

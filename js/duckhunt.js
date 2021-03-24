@@ -1,51 +1,57 @@
 var directions = ["N", "NE", "E", "ES", "S", "SW", "W", "NW"];
 var duck = document.getElementById("duck");
 
-var north = 75;
-var northEast = 75;
-var east = 75;
-var southEast = 75;
+var posTop = 250;
+var posLeft = 250;
 
 
 function moveDuck(){
 	var number = Math.floor(Math.random() * directions.length);
 	var direction = directions[number];
+	console.dir(duck.style);
 	if(direction == "N"){
-		north = north - 75;
-		duck.style.north + "px";	
+		posTop = posTop - 75;
+		console.log(posTop);
+		duck.style.top = posTop + "px";
 	}
 	else if(direction == "S"){
-		north = north + 75;
-		duck.style.north + "px";
+		posTop = posTop + 75;
+		duck.style.top = posTop + "px";
 	}
 	else if(direction == "E"){
-		east = east - 75;
-		duck.style.east + "px";	
+		posLeft = posLeft + 75;
+		duck.style.left = posLeft + "px";	
 	}
 	else if(direction == "W"){
-		east = east + 75;
-		duck.style.east + "px";
+		posLeft = posLeft - 75;
+		duck.style.left = posLeft + "px";
 	}
 	else if(direction == "NE"){
-		northEast = northEast - 75;
-		duck.style.northEast + "px";
+		posTop = posTop - 75;
+		duck.style.top = posTop + "px";
+		posLeft = posLeft + 75;
+		duck.style.left = posLeft + "px";
 	}
 	else if(direction == "SW"){
-		northEast = northEast + 75;
-		duck.style.northEast+ "px";
+		posTop = posTop + 75;
+		duck.style.posTop = posTop + "px";
+		posLeft = posLeft - 75;
+		duck.style.left = posLeft + "px";
 	}
 	else if(direction == "NW"){
-		southEast = southEast - 75;
-		duck.style.southEast + "px";
+		posTop = posTop - 75;
+		duck.style.top = posTop + "px";
+		posLeft = posLeft - 75;
+		duck.style.left = posLeft + "px";
 	}
-	else{
-		southEast = southEast + 75;
-		duck.style.southEast + "px";
+	else if(direction == "SE"){
+		posTop = posTop + 75;
+		duck.style.top = posTop + "px";
+		posLeft = posLeft + 75;
+		duck.style.left = posLeft + "px";
 	}
 		
 }
-
-
 
 setInterval(function(){
 	moveDuck();
